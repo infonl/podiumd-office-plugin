@@ -1,21 +1,21 @@
-/*
- * SPDX-FileCopyrightText: 2021 - 2022 Atos, 2024-2025 Lifely
- * SPDX-License-Identifier: EUPL-1.2+
- */
-import Fastify from "fastify";
+import { FastifyRequest } from "fastify";
 
-const app = Fastify({ logger: true });
+const fastify = require('fastify')();
+const fastifyCors = require('fastify-cors');
 
-app.listen({ port: 3003 }, () => {
-  console.log("Server running on http://localhost:3003");
+// Register the CORS plugin
+fastify.register(fastifyCors, {
+    origin: '*', 
+    methods: ['GET', 'POST'],  // Allow methods your client will use (GET, POST, etc.)
+    allowedHeaders: ['Content-Type'],  
 });
 
-// Route to get a case by number
-app.get("/zaak/:caseNumber", async (request) => {
-  // @ts-ignore
-  const { caseNumber } = request.params
-  return { message: `GET: / zaak / ${caseNumber}` };
+interface ZakenParams {
+  caseNumber: string;
+}
+
+fastify.get('/zaken/:caseNumber', async (request: FastifyRequest<{ Params: ZakenParams }>) => {
+  const caseNumber = request.params.caseNumber;
+  // Your logic to handle the request and fetch data
+  return { caseNumber, data: 'Some data for case ' + caseNumber };
 });
-
-
-

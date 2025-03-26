@@ -1,15 +1,18 @@
 {
     "private": true,
     "workspaces": [
-      "office-add-in",
-      "office-backend"
+        "office-add-in",
+        "office-backend"
     ],
     "packageManager": "npm@10.9.2",
     "scripts": {
-      "dev": "turbo dev",
-      "build": "turbo build"
+        "dev": "turbo dev",
+        "build": "turbo build"
     },
     "devDependencies": {
-      "turbo": "^1.0.0"
+        "turbo": "^1.0.0"
+    },
+    "dependencies": {
+        "fastify-cors": "^6.0.3"
     }
-  }
+}
