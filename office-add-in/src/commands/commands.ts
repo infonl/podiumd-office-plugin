@@ -1,10 +1,9 @@
 /*
- * SPDX-FileCopyrightText: 2025 INFO
+ * SPDX-FileCopyrightText: 2025 Info
  * SPDX-License-Identifier: EUPL-1.2+
  */
 
 /*
- * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
  * See LICENSE in the project root for license information.
  */
 

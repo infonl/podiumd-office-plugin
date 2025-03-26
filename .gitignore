@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2025 Lifely
+# SPDX-FileCopyrightText: 2025 Info
 # SPDX-License-Identifier: EUPL-1.2+
 #
 
@@ -20,3 +20,8 @@
 
 node_modules/
 **/node_modules/
+dist/
+**/dist/
+.turbo/
+.vscode/
+**/.vscode/
