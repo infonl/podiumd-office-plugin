@@ -1,21 +1,24 @@
-import { FastifyRequest } from "fastify";
+import fastify, { FastifyRequest } from 'fastify';
+import fastifyCors from 'fastify-cors';
 
-const fastify = require('fastify')();
-const fastifyCors = require('fastify-cors');
+const app = fastify();
 
-// Register the CORS plugin
-fastify.register(fastifyCors, {
-    origin: '*', 
-    methods: ['GET', 'POST'],  // Allow methods your client will use (GET, POST, etc.)
-    allowedHeaders: ['Content-Type'],  
+app.options
+
+app.register(fastifyCors, {
+  origin: '*', // Allow all origins
 });
 
-interface ZakenParams {
-  caseNumber: string;
-}
-
-fastify.get('/zaken/:caseNumber', async (request: FastifyRequest<{ Params: ZakenParams }>) => {
-  const caseNumber = request.params.caseNumber;
-  // Your logic to handle the request and fetch data
-  return { caseNumber, data: 'Some data for case ' + caseNumber };
+app.get("/", async (request, reply) => {
+  return { message: "Hello, World!" };
 });
+
+// Handle all routes with proper logging
+app.listen({ port: 3003, host: '0.0.0.0' }, (err, address) => {
+  if (err) {
+    console.error('Error starting Fastify server:', err);
+    process.exit(1);
+  }
+  console.log(`Server running at ${address}`);
+});
+

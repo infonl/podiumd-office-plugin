@@ -1,11 +1,12 @@
-/*
- * SPDX-FileCopyrightText: 2021 - 2022 Atos, 2024-2025 Lifely
- * SPDX-License-Identifier: EUPL-1.2+
- */
 /******/ (function() { // webpackBootstrap
 /*!**********************************!*\
   !*** ./src/commands/commands.ts ***!
   \**********************************/
+/*
+ * SPDX-FileCopyrightText: 2025 Lifely
+ * SPDX-License-Identifier: EUPL-1.2+
+ */
+
 /*
  * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
  * See LICENSE in the project root for license information.
