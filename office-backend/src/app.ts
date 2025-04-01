@@ -40,7 +40,6 @@ fastify.get('/zaken/:zaakNummer', async (request: FastifyRequest, reply: Fastify
   reply.send({ response });
 });
 
-
 fastify.listen({ port: 3003, host: '127.0.0.1' }, (err, address) => {
   if (err) {
     console.error('Error starting server:', err);
