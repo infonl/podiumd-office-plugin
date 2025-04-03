@@ -1,11 +1,10 @@
 {
   "name": "office-add-in",
   "version": "0.0.1",
-  "license": "EUPL-1.2+",
   "config": {
     "app_to_debug": "word",
     "app_type_to_debug": "web",
-    "dev_server_port": 3003
+    "dev_server_port": 3000
   },
   "scripts": {
     "build": "webpack --mode production",
@@ -28,6 +27,7 @@
     "regenerator-runtime": "0.14.1"
   },
   "devDependencies": {
+
     "@babel/core": "7.26.10",
     "@babel/preset-env": "7.26.9",
     "@babel/preset-typescript": "7.27.0",
@@ -56,5 +56,5 @@
   "prettier": "office-addin-prettier-config",
   "browserslist": [
     "last 2 versions"
-  ]
+    ]
 }
