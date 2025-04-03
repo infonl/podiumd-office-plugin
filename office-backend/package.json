@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "EUPL-1.2+",
   "description": "",
   "devDependencies": {
     "@types/node": "^22.13.13",
