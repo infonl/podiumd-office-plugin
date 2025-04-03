@@ -1,11 +1,6 @@
 {
-  "name": "office-addin-taskpane",
+  "name": "office-add-in",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/OfficeDev/Office-Addin-TaskPane.git"
-  },
-  "license": "MIT",
   "config": {
     "app_to_debug": "word",
     "app_type_to_debug": "web",
@@ -60,7 +55,6 @@
   },
   "prettier": "office-addin-prettier-config",
   "browserslist": [
-    "last 2 versions",
-    "ie 11"
-  ]
+    "last 2 versions"
+    ]
 }
