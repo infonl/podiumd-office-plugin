@@ -1,6 +1,6 @@
 # podiumd-office-plugin
 
-![Version: 0.0.16](https://img.shields.io/badge/Version-0.0.16-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.70](https://img.shields.io/badge/AppVersion-0.0.70-informational?style=flat-square)
+![Version: 0.0.17](https://img.shields.io/badge/Version-0.0.17-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.70](https://img.shields.io/badge/AppVersion-0.0.70-informational?style=flat-square)
 
 A Helm chart for deploying the podiumd-office-plugin (frontend and backend)
 
@@ -30,16 +30,15 @@ The Github workflow will perform helm-linting and will bump the version if neede
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | backend.apiBaseUrl | string | `"http://localhost:8020"` | Base URL to the openzaak API |
-| backend.certificate.caPath | string | `""` | path to ca certificate file. If not specified, a self signed certificate will be generated for localhost |
-| backend.certificate.certPath | string | `""` | path to certificate file. If not specified, a self signed certificate will be generated for localhost |
-| backend.certificate.keyPath | string | `""` | path to private key file. If not specified, a self signed certificate will be generated for localhost |
 | backend.image.pullPolicy | string | `"IfNotPresent"` |  |
 | backend.image.repository | string | `"ghcr.io/infonl/podiumd-office-add-in-backend"` |  |
 | backend.image.tag | string | `"v0.0.173@sha256:cd0c7652abc365eac103c4d39e017154e99395532b8fbfac02ad34dbaae79899"` |  |
 | backend.jwtSecret | string | `"SECRECT_KEY_PLACEHOLDER"` | Secret key used for generating and validating JWT tokens for secure communication |
 | backend.service.port | int | `3003` |  |
 | backend.service.type | string | `"ClusterIP"` |  |
-| frontend.frontendUrl | string | `"https://localhost:3000"` | The frontend URL where the manifest.xml and static js file are served |
+| frontend.backendPublicUrl | string | `"http://localhost:3000/proxy"` | The public URL to the backend service if directly exposed. By default it is proxied via the frontend host |
+| frontend.enableHttps | bool | `false` | If enabled nginx will also listen on port 443. You will need to volume map a key and certificate valid for your frontendUrl |
+| frontend.frontendUrl | string | `"http://localhost:3000"` | The frontend public URL where the manifest.xml and static js file are served |
 | frontend.image.pullPolicy | string | `"IfNotPresent"` |  |
 | frontend.image.repository | string | `"ghcr.io/infonl/podiumd-office-add-in-frontend"` |  |
 | frontend.image.tag | string | `"v0.0.173@sha256:969855a76bbfc86cf9f1f2bed6264f10a40e7eb68b0f7cfb4ea6eadb577c42bb"` |  |
